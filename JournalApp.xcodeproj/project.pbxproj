@@ -11,6 +11,7 @@
 		38A9BDAA2A1D80ED00E56437 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A9BDA92A1D80ED00E56437 /* ContentView.swift */; };
 		38A9BDAC2A1D80EF00E56437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BDAB2A1D80EF00E56437 /* Assets.xcassets */; };
 		38A9BDAF2A1D80EF00E56437 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BDAE2A1D80EF00E56437 /* Preview Assets.xcassets */; };
+		38A9BDB72A1D814B00E56437 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 38A9BDB62A1D814B00E56437 /* SlidingTabView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A9BDB72A1D814B00E56437 /* SlidingTabView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = JournalApp;
+			packageProductDependencies = (
+				38A9BDB62A1D814B00E56437 /* SlidingTabView */,
+			);
 			productName = JournalApp;
 			productReference = 38A9BDA42A1D80ED00E56437 /* JournalApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 38A9BD9B2A1D80ED00E56437;
+			packageReferences = (
+				38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+			);
 			productRefGroup = 38A9BDA52A1D80ED00E56437 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,6 +347,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		38A9BDB62A1D814B00E56437 /* SlidingTabView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
+			productName = SlidingTabView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38A9BD9C2A1D80ED00E56437 /* Project object */;
 }
