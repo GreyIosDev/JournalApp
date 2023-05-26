@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38A9BDA82A1D80ED00E56437 /* JournalAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A9BDA72A1D80ED00E56437 /* JournalAppApp.swift */; };
+		385E67062A213D9C00E7EF5D /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E67052A213D9C00E7EF5D /* RecordView.swift */; };
+		385E670A2A21490600E7EF5D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E67092A21490600E7EF5D /* String.swift */; };
+		385E670C2A21493E00E7EF5D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E670B2A21493E00E7EF5D /* LoginView.swift */; };
+		385E670E2A21497F00E7EF5D /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E670D2A21497F00E7EF5D /* SignupView.swift */; };
+		385E67102A2149D800E7EF5D /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385E670F2A2149D800E7EF5D /* AuthView.swift */; };
+		385E67132A215BA800E7EF5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 385E67122A215BA800E7EF5D /* GoogleService-Info.plist */; };
+		385E67162A215DDE00E7EF5D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 385E67152A215DDE00E7EF5D /* FirebaseAuth */; };
+		385E67182A215DDE00E7EF5D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 385E67172A215DDE00E7EF5D /* FirebaseFirestore */; };
+		38A9BDA82A1D80ED00E56437 /* JournalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A9BDA72A1D80ED00E56437 /* JournalApp.swift */; };
 		38A9BDAA2A1D80ED00E56437 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A9BDA92A1D80ED00E56437 /* ContentView.swift */; };
 		38A9BDAC2A1D80EF00E56437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BDAB2A1D80EF00E56437 /* Assets.xcassets */; };
 		38A9BDAF2A1D80EF00E56437 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BDAE2A1D80EF00E56437 /* Preview Assets.xcassets */; };
@@ -15,8 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		385E67052A213D9C00E7EF5D /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecordView.swift; path = ../../RecordView.swift; sourceTree = "<group>"; };
+		385E67092A21490600E7EF5D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		385E670B2A21493E00E7EF5D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginView.swift; path = JournalApp/Views/LoginView.swift; sourceTree = SOURCE_ROOT; };
+		385E670D2A21497F00E7EF5D /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupView.swift; path = JournalApp/Views/SignupView.swift; sourceTree = SOURCE_ROOT; };
+		385E670F2A2149D800E7EF5D /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthView.swift; path = JournalApp/Views/AuthView.swift; sourceTree = SOURCE_ROOT; };
+		385E67122A215BA800E7EF5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38A9BDA42A1D80ED00E56437 /* JournalApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		38A9BDA72A1D80ED00E56437 /* JournalAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalAppApp.swift; sourceTree = "<group>"; };
+		38A9BDA72A1D80ED00E56437 /* JournalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalApp.swift; sourceTree = "<group>"; };
 		38A9BDA92A1D80ED00E56437 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		38A9BDAB2A1D80EF00E56437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38A9BDAE2A1D80EF00E56437 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -28,12 +42,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A9BDB72A1D814B00E56437 /* SlidingTabView in Frameworks */,
+				385E67162A215DDE00E7EF5D /* FirebaseAuth in Frameworks */,
+				385E67182A215DDE00E7EF5D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		385E67042A213C1D00E7EF5D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				385E670D2A21497F00E7EF5D /* SignupView.swift */,
+				385E670B2A21493E00E7EF5D /* LoginView.swift */,
+				38A9BDA92A1D80ED00E56437 /* ContentView.swift */,
+				385E67052A213D9C00E7EF5D /* RecordView.swift */,
+				385E670F2A2149D800E7EF5D /* AuthView.swift */,
+				38A9BDA72A1D80ED00E56437 /* JournalApp.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		385E67112A214AF900E7EF5D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				385E67092A21490600E7EF5D /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		38A9BD9B2A1D80ED00E56437 = {
 			isa = PBXGroup;
 			children = (
@@ -53,8 +90,9 @@
 		38A9BDA62A1D80ED00E56437 /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
-				38A9BDA72A1D80ED00E56437 /* JournalAppApp.swift */,
-				38A9BDA92A1D80ED00E56437 /* ContentView.swift */,
+				385E67122A215BA800E7EF5D /* GoogleService-Info.plist */,
+				385E67112A214AF900E7EF5D /* Extension */,
+				385E67042A213C1D00E7EF5D /* Views */,
 				38A9BDAB2A1D80EF00E56437 /* Assets.xcassets */,
 				38A9BDAD2A1D80EF00E56437 /* Preview Content */,
 			);
@@ -87,6 +125,8 @@
 			name = JournalApp;
 			packageProductDependencies = (
 				38A9BDB62A1D814B00E56437 /* SlidingTabView */,
+				385E67152A215DDE00E7EF5D /* FirebaseAuth */,
+				385E67172A215DDE00E7EF5D /* FirebaseFirestore */,
 			);
 			productName = JournalApp;
 			productReference = 38A9BDA42A1D80ED00E56437 /* JournalApp.app */;
@@ -118,6 +158,7 @@
 			mainGroup = 38A9BD9B2A1D80ED00E56437;
 			packageReferences = (
 				38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+				385E67142A215DDD00E7EF5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 38A9BDA52A1D80ED00E56437 /* Products */;
 			projectDirPath = "";
@@ -134,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38A9BDAF2A1D80EF00E56437 /* Preview Assets.xcassets in Resources */,
+				385E67132A215BA800E7EF5D /* GoogleService-Info.plist in Resources */,
 				38A9BDAC2A1D80EF00E56437 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,8 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				385E67102A2149D800E7EF5D /* AuthView.swift in Sources */,
+				385E670E2A21497F00E7EF5D /* SignupView.swift in Sources */,
 				38A9BDAA2A1D80ED00E56437 /* ContentView.swift in Sources */,
-				38A9BDA82A1D80ED00E56437 /* JournalAppApp.swift in Sources */,
+				385E67062A213D9C00E7EF5D /* RecordView.swift in Sources */,
+				385E670A2A21490600E7EF5D /* String.swift in Sources */,
+				385E670C2A21493E00E7EF5D /* LoginView.swift in Sources */,
+				38A9BDA82A1D80ED00E56437 /* JournalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +396,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		385E67142A215DDD00E7EF5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/QuynhNguyen/SlidingTabView.git";
@@ -360,6 +415,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		385E67152A215DDE00E7EF5D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 385E67142A215DDD00E7EF5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		385E67172A215DDE00E7EF5D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 385E67142A215DDD00E7EF5D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		38A9BDB62A1D814B00E56437 /* SlidingTabView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 38A9BDB52A1D814B00E56437 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
