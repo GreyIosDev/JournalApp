@@ -20,6 +20,7 @@
 		38A9BDAF2A1D80EF00E56437 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38A9BDAE2A1D80EF00E56437 /* Preview Assets.xcassets */; };
 		38A9BDB72A1D814B00E56437 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 38A9BDB62A1D814B00E56437 /* SlidingTabView */; };
 		38BFAB732A2190C700DE95C1 /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFAB722A2190C700DE95C1 /* RecordView.swift */; };
+		38BFAB752A22291E00DE95C1 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BFAB742A22291E00DE95C1 /* Recording.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		38A9BDAB2A1D80EF00E56437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38A9BDAE2A1D80EF00E56437 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38BFAB722A2190C700DE95C1 /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = SOURCE_ROOT; };
+		38BFAB742A22291E00DE95C1 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		38A9BDA62A1D80ED00E56437 /* JournalApp */ = {
 			isa = PBXGroup;
 			children = (
+				38BFAB742A22291E00DE95C1 /* Recording.swift */,
 				385E67122A215BA800E7EF5D /* GoogleService-Info.plist */,
 				385E67112A214AF900E7EF5D /* Extension */,
 				385E67042A213C1D00E7EF5D /* Views */,
@@ -194,6 +197,7 @@
 				385E670A2A21490600E7EF5D /* String.swift in Sources */,
 				385E670C2A21493E00E7EF5D /* LoginView.swift in Sources */,
 				38A9BDA82A1D80ED00E56437 /* JournalApp.swift in Sources */,
+				38BFAB752A22291E00DE95C1 /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

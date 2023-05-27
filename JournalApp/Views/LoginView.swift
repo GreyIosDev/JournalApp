@@ -12,12 +12,14 @@ struct LoginView: View {
     @State var isPresented = false
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
-
+    @AppStorage("email") var emailID: String = ""
 
     @State private var email: String = ""
     @State private var password: String = ""
-    
-    
+    @State private var showAlertView: Bool = false
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
+ 
     
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 6 characters long
@@ -113,22 +115,28 @@ struct LoginView: View {
                 
                 
                 Button {
-                    print(7)
-                    self.isPresented.toggle()
-
+                   
+                  
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                         if let error = error {
                             print(error)
+                            alertTitle = "Uh-oh!"
+                            alertMessage = (error.localizedDescription)
+                            showAlertView = true
                             return
                         }
 
                         if let authResult = authResult {
                             print(authResult.user.uid)
                             withAnimation {
+                                self.isPresented = true
+                                emailID =  email
                                 userID = authResult.user.uid
+                               
                             }
                         }
                    }
+                   
                 } label: {
                     Text("Sign In")
                         .foregroundColor(.white)
@@ -145,8 +153,11 @@ struct LoginView: View {
                         .padding(.horizontal)
                 }
                 .fullScreenCover(isPresented: $isPresented, content:
-                                                RecordView.init)
-           
+                                                    RecordView.init)
+                                                                        
+                .alert(isPresented: $showAlertView) {
+                    Alert(title: Text(alertTitle),message:Text (alertMessage), dismissButton: .cancel())
+                }
                 
                 
             }

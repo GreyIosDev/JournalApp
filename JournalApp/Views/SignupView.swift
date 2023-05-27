@@ -13,6 +13,10 @@ struct SignupView: View {
     @State private var password: String = ""
     @AppStorage("uid") var userID: String = ""
     @Binding var currentShowingView: String
+    @State private var showAlertView: Bool = false
+    @State private var alertTitle: String = ""
+    @State private var alertMessage: String = ""
+    @State var isPresented = false
     
     private func isValidPassword(_ password: String) -> Bool {
         // minimum 6 characters long
@@ -114,6 +118,9 @@ struct SignupView: View {
                         
                         if let error = error {
                             print(error)
+                            alertTitle = "Uh-oh!"
+                            alertMessage = (error.localizedDescription)
+                            showAlertView = true
                             return
                         }
                         
@@ -139,10 +146,16 @@ struct SignupView: View {
                         )
                         .padding(.horizontal)
                 }
+                .fullScreenCover(isPresented: $isPresented, content:
+                                                    RecordView.init)
                 
+                .alert(isPresented: $showAlertView) {
+                    Alert(title: Text(alertTitle),message:Text (alertMessage), dismissButton: .cancel())
+                    
+                    
+                }
                 
             }
-            
         }
     }
 }
