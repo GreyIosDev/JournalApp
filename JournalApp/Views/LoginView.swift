@@ -9,10 +9,11 @@ import SwiftUI
 import FirebaseAuth
 
 struct LoginView: View {
+    @State var isPresented = false
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
-    
-    
+
+
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -22,9 +23,9 @@ struct LoginView: View {
         // minimum 6 characters long
         // 1 uppercase character
         // 1 special char
-        
-        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[a-z])(?=.*[$@$#!%*?&])(?=.*[A-Z]).{6,}$")
-        
+
+        let passwordRegex = NSPredicate(format: "SELF MATCHES %@", "^(?=.[a-z])(?=.[$@$#!%?&])(?=.[A-Z]).{6,}$")
+
         return passwordRegex.evaluate(with: password)
     }
     
@@ -47,13 +48,13 @@ struct LoginView: View {
                 
                 HStack {
                     Image(systemName: "mail")
-                    TextField("Email", text: $email)
+                   TextField("Email", text: $email)
                     
                     Spacer()
                     
-                    
+
                     if(email.count != 0) { // This indicates that for the check mark to be shown the email bar needs to be filled
-                        
+
                         Image(systemName: email.isValidEmail() ? "checkmark" : "xmark")
                             .fontWeight(.bold)
                             .foregroundColor(email.isValidEmail() ? .green : .red)
@@ -76,9 +77,9 @@ struct LoginView: View {
                     SecureField("Password", text: $password)
                     
                     Spacer()
-                    
+
                     if(password.count != 0) {
-                        
+
                         Image(systemName: isValidPassword(password) ? "checkmark" : "xmark")
                             .fontWeight(.bold)
                             .foregroundColor(isValidPassword(password) ? .green : .red)
@@ -97,7 +98,8 @@ struct LoginView: View {
                 
                 Button(action: {
                     withAnimation {
-                        self.currentShowingView = "signup"
+                        print(5)
+                       self.currentShowingView = "signup"
                     }
                     
                     
@@ -111,37 +113,40 @@ struct LoginView: View {
                 
                 
                 Button {
-                    
+                    print(7)
+                    self.isPresented.toggle()
+
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                         if let error = error {
                             print(error)
                             return
                         }
-                        
+
                         if let authResult = authResult {
                             print(authResult.user.uid)
                             withAnimation {
                                 userID = authResult.user.uid
                             }
                         }
-                        
-                        
-                    }
+                   }
                 } label: {
                     Text("Sign In")
                         .foregroundColor(.white)
                         .font(.title3)
                         .bold()
-                    
+
                         .frame(maxWidth: .infinity)
                         .padding()
-                    
+
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color.black)
                         )
                         .padding(.horizontal)
                 }
+                .fullScreenCover(isPresented: $isPresented, content:
+                                                RecordView.init)
+                .background(Color(.red))
                 
                 
             }
