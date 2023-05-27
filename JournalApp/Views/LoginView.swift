@@ -146,7 +146,7 @@ struct LoginView: View {
                 }
                 .fullScreenCover(isPresented: $isPresented, content:
                                                 RecordView.init)
-                .background(Color(.red))
+           
                 
                 
             }

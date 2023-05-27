@@ -9,7 +9,7 @@ import SwiftUI
 import AVFAudio
 
 struct RecordView: View {
-    var tabTitle: String
+    var tabTitle: String = "Grateful"
     
     @State private var audioRecorder: AVAudioRecorder? // Audio recorder instance
     @State private var audioPlayer: AVAudioPlayer? // Audio player instance
@@ -17,7 +17,7 @@ struct RecordView: View {
     @State private var recordingDuration: TimeInterval = 0 // Recording duration in seconds
     @State private var timer: Timer? // Timer to update the recording duration
     @State private var isRecording = false // Whether recording is in progress
-    var color: LinearGradient
+    var color: LinearGradient =  LinearGradient(gradient: Gradient(colors: [.orange, .pink]), startPoint: .top, endPoint: .bottom)
     
     var body: some View {
         ZStack {
